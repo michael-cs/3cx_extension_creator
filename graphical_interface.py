@@ -22,9 +22,9 @@ class TelaPython:
         planilha_pre=self.values['planilha']
         email_envio=self.values['email']
         checkbox_email=self.values['checkbox1']
-        print(f'xlsx: {planilha_pre}')
-        print(f'extension: {email_envio}')
-        print(checkbox_email)
+        #print(f'xlsx: {planilha_pre}')
+        #print(f'extension: {email_envio}')
+        #print(checkbox_email)
         
         
         

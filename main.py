@@ -3,7 +3,6 @@ from functions import pass_random, pin_random, meeting_random
 import csv
 import openpyxl
 
-print(planilha_pre,email_envio,checkbox_email)
 
 name=lastname=number=email=data=''
 
