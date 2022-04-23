@@ -1,9 +1,9 @@
-
+from graphical_interface import email_envio,checkbox_email,planilha_pre
 from functions import pass_random, pin_random, meeting_random
 import csv
 import openpyxl
 
-
+print(planilha_pre,email_envio,checkbox_email)
 
 name=lastname=number=email=data=''
 
@@ -12,7 +12,8 @@ cabecalho = ['Number','FirstName','LastName','EmailAddress','MobileNumber','Auth
 writer = csv.writer(f)
 writer.writerow(cabecalho)  
 
-path = 'planilha.xlsx'
+
+path = planilha_pre
 wb_obj = openpyxl.load_workbook(path)
 sheet_obj = wb_obj.active
 m_row=sheet_obj.max_row
@@ -27,14 +28,15 @@ for line in range (6, m_row+1):
             name=cell_obj.value
         elif i==9:
             lastname=cell_obj.value
-        elif i==10:
+        elif i==10:            
             email=cell_obj.value
             if number!=None:
                 senha = pass_random()
                 meeting_address= meeting_random()
                 pin_number=pin_random()
-                data=[number,name,lastname,email,'',senha,senha,meeting_address,0,0,'',0,0,1,0,pin_number,0,0,1,'','',0,1,1,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,'','',1,0,0,0,'',0,senha,senha,0,0,0,'','','','',0,1,'',1,0,'','',0]          
-                #data=[number,name,lastname,email,'',senha,senha,meeting_address,'',pin_number]
+                if checkbox_email == True:
+                    email = email_envio
+                data=[number,name,lastname,email,'',senha,senha,meeting_address,0,0,'',0,0,1,0,pin_number,0,0,1,'','',0,1,1,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,'','',1,0,0,0,'',0,senha,senha,0,0,0,'','','','',0,1,'',1,0,'','',0]   
                 with open('extensions.csv', 'a', encoding='UTF8',newline='') as f:
                     writer = csv.writer(f)                                                                                          
                     writer.writerow(data)
