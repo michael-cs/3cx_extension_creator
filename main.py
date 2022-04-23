@@ -20,8 +20,7 @@ max_col = sheet_obj.max_column
 
 for line in range (6, m_row+1):
     for i in range(7, 11):
-        cell_obj = sheet_obj.cell(row = line, column = i)
-        #print(cell_obj.value, end = " ")            
+        cell_obj = sheet_obj.cell(row = line, column = i)         
         if i ==7:
             number = cell_obj.value          
         elif i==8:
