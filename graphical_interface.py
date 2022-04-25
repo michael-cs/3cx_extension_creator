@@ -2,6 +2,7 @@ import PySimpleGUI as sg
 
 class TelaPython:
     def __init__(self):
+
         sg.change_look_and_feel('DarkBlue15')
 
         layout = [
@@ -13,6 +14,8 @@ class TelaPython:
         ]
         window = sg.Window('3CX Extension Creator - By Michatec').layout(layout)
         self.event,self.values = window.read()
+    
+
         
                          
     def Iniciar(self):
@@ -22,6 +25,8 @@ class TelaPython:
         planilha_pre=self.values['planilha']
         email_envio=self.values['email']
         checkbox_email=self.values['checkbox1']
+        
+
         #print(f'xlsx: {planilha_pre}')
         #print(f'extension: {email_envio}')
         #print(checkbox_email)
